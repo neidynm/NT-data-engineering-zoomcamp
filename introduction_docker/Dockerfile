@@ -27,4 +27,4 @@ RUN mkdir logs
 # CMD ["tail", "-f", "/dev/null"]
 
 #command to run the ingest_data.py
-CMD ["python3", "/app/ingest_data.py"]
+CMD ["python3", "ingest_data.py"]

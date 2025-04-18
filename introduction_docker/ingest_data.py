@@ -51,7 +51,7 @@ def main():
         #connect to the database
 
         logging.info("Connecting to the database ...")
-        engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
+        engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}', connect_args={'connect_timeout': 160})
 
         with engine.begin() as conn:
             conn.execute(sqla.text(f"""DROP Table IF exists {table_name}"""))
